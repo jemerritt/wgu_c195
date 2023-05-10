@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #252525; -fx-background-insets: 12; -fx-background-radius: 6; -fx-effect: dropshadow(three-pass-box, derive(black, -20%), 10, 0, 4, 4);" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Appointments">
+    <children>
+        <Label layoutX="25.0" layoutY="40.0" text="Scheduling System" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="24.0" />
+            </font></Label>
+        <Pane layoutX="25.0" layoutY="100.0" prefHeight="730.0" prefWidth="1150.0" style="-fx-border-color: grey; -fx-border-radius: 10;">
+            <children>
+                <TableView fx:id="appointmentsTable" layoutX="5.0" layoutY="45.0" prefHeight="670.0" prefWidth="1140.0" style="-fx-background-color: #202020;">
+                    <columns>
+                        <TableColumn fx:id="appointmentIdColumn" prefWidth="35.0" text="ID" />
+                        <TableColumn fx:id="appointmentTitleColumn" prefWidth="125.0" text="Title" />
+                        <TableColumn fx:id="appointmentDescColumn" prefWidth="200.0" text="Description" />
+                        <TableColumn fx:id="appointmentLocationColumn" prefWidth="105.0" text="Location" />
+                        <TableColumn fx:id="appointmentContactColumn" minWidth="0.0" prefWidth="100.0" text="Contact" />
+                        <TableColumn fx:id="appointmentTypeColumn" prefWidth="120.0" text="Type" />
+                  <TableColumn fx:id="appointmentStartColumn" minWidth="0.0" prefWidth="150.0" text="Start" />
+                  <TableColumn fx:id="appointmentEndColumn" minWidth="0.0" prefWidth="150.0" text="End" />
+                  <TableColumn fx:id="appointmentCustomerIdColumn" minWidth="7.0" prefWidth="78.00006103515625" text="Customer" />
+                  <TableColumn fx:id="appointmentUserIdColumn" minWidth="9.0" prefWidth="68.666748046875" text="User" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT" layoutX="920.0" layoutY="740.0" prefHeight="45.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fx:id="appointmentAddB" fitHeight="30.0" fitWidth="60.0" onMousePressed="#appointmentAddPressed" onMouseReleased="#appointmentAddReleased" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/add.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="appointmentModB" fitHeight="30.0" fitWidth="200.0" onMousePressed="#appointmentModPressed" onMouseReleased="#appointmentModReleased" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/modify.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="appointmentDelB" fitHeight="30.0" fitWidth="200.0" onMousePressed="#appointmentDelPressed" onMouseReleased="#appointmentDelReleased" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/delete.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <Label layoutX="15.0" layoutY="20.0" text="Appointments" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            <HBox layoutX="174.0" prefHeight="27.0" prefWidth="569.0">
+               <children>
+                  <RadioButton fx:id="allRadio" mnemonicParsing="false" onAction="#allRadioAction" text="All" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="filter" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="monthRadio" mnemonicParsing="false" onAction="#monthRadioAction" text="This Month" textFill="WHITE" toggleGroup="$filter">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton fx:id="weekRadio" mnemonicParsing="false" onAction="#weekRadioAction" text="This Week" textFill="WHITE" toggleGroup="$filter">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            </children></Pane>
+        <ImageView fx:id="exitButton" fitHeight="18.0" fitWidth="18.0" layoutX="1150.0" layoutY="15.0" onMousePressed="#exitPressed" onMouseReleased="#exitReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/exit.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="minButton" fitHeight="18.0" fitWidth="18.0" layoutX="1130.0" layoutY="15.0" onMousePressed="#minPressed" onMouseReleased="#minReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/min.png" />
+            </image>
+        </ImageView>
+      <HBox layoutX="380.0" layoutY="5.0" prefHeight="100.0" prefWidth="396.0" spacing="30.0">
+         <children>
+            <Label fx:id="aLabel" onMouseEntered="#aLabelHover" onMouseExited="#aLabelHoverExit" onMousePressed="#aLabelClick" onMouseReleased="#aLabelClickRelease" text="Appointments" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="cLabel" onMouseEntered="#cLabelHover" onMouseExited="#cLabelHoverExit" onMousePressed="#cLabelClick" onMouseReleased="#cLabelClickRelease" text="Customers" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </HBox>
+      <Label layoutX="872.0" layoutY="38.0" text="Reports" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="reportButton" layoutX="969.0" layoutY="43.0" mnemonicParsing="false" onAction="#onReportB" text="Run Report" />
+      <RadioButton fx:id="report1" layoutX="870.0" layoutY="73.0" mnemonicParsing="false" selected="true" text="Report 1" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="report" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="report2" layoutX="943.0" layoutY="73.0" mnemonicParsing="false" text="Report 2" textFill="WHITE" toggleGroup="$report" />
+      <RadioButton fx:id="report3" layoutX="1021.0" layoutY="73.0" mnemonicParsing="false" text="Report 3" textFill="WHITE" toggleGroup="$report" />
+    </children>
+</Pane>

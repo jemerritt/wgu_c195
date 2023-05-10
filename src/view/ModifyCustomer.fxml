@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" style="-fx-background-color: #252525; -fx-background-insets: 12; -fx-background-radius: 6; -fx-effect: dropshadow(three-pass-box, derive(black, -20%), 10, 0, 4, 4);" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyCustomer">
+    <children>
+        <Label layoutX="25.0" layoutY="40.0" text="Scheduling System" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="24.0" />
+            </font></Label>
+        <ImageView fx:id="exitButton" fitHeight="18.0" fitWidth="18.0" layoutX="925.0" layoutY="15.0" onMousePressed="#exitPressed" onMouseReleased="#exitReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/exit.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="minButton" fitHeight="18.0" fitWidth="18.0" layoutX="905.0" layoutY="15.0" onMousePressed="#minPressed" onMouseReleased="#minReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/min.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="168.0" layoutY="153.0" text="Add Customer" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="230.0" text="ID" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="280.0" text="Name" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="330.0" text="Phone" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="380.0" text="Address" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="430.0" text="Postal Code" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="480.0" text="Country" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="id" disable="true" layoutX="300.0" layoutY="231.0" />
+        <TextField fx:id="name" layoutX="300.0" layoutY="281.0" />
+        <TextField fx:id="phone" layoutX="300.0" layoutY="331.0" />
+        <TextField fx:id="address" layoutX="300.0" layoutY="381.0" />
+        <TextField fx:id="postal" layoutX="300.0" layoutY="431.0" />
+        <HBox layoutX="325.0" layoutY="537.0" prefHeight="45.0" prefWidth="200.0">
+            <children>
+                <ImageView fx:id="saveB" fitHeight="30.0" fitWidth="60.0" onMousePressed="#savePressed" onMouseReleased="#saveReleased" pickOnBounds="true" preserveRatio="true">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                    <image>
+                        <Image url="@../img/save.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="cancelB" fitHeight="30.0" fitWidth="60.0" layoutX="15.0" layoutY="15.0" onMousePressed="#cancelPressed" onMouseReleased="#cancelReleased" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/cancel.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </ImageView>
+            </children>
+        </HBox>
+        <HBox layoutX="380.0" layoutY="5.0" prefHeight="100.0" prefWidth="396.0" spacing="30.0">
+            <children>
+                <Label text="Appointments" textFill="WHITE" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                    </font>
+                </Label>
+                <Label text="Customers" textFill="WHITE" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </HBox>
+      <ComboBox fx:id="countryComboBox" layoutX="300.0" layoutY="481.0" onAction="#onCountry" prefWidth="150.0" />
+      <Label layoutX="493.0" layoutY="480.0" text="Division" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="divisionComboBox" layoutX="578.0" layoutY="481.0" prefWidth="150.0" />
+    </children>
+</Pane>

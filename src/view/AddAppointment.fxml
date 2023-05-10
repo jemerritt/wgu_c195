@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" style="-fx-background-color: #252525; -fx-background-insets: 12; -fx-background-radius: 6; -fx-effect: dropshadow(three-pass-box, derive(black, -20%), 10, 0, 4, 4);" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddAppointment">
+    <children>
+        <Label layoutX="25.0" layoutY="40.0" text="Scheduling System" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="24.0" />
+            </font></Label>
+        <ImageView fx:id="exitButton" fitHeight="18.0" fitWidth="18.0" layoutX="925.0" layoutY="15.0" onMousePressed="#exitPressed" onMouseReleased="#exitReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/exit.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="minButton" fitHeight="18.0" fitWidth="18.0" layoutX="905.0" layoutY="15.0" onMousePressed="#minPressed" onMouseReleased="#minReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/min.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="168.0" layoutY="153.0" text="Add Appointment" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="230.0" text="ID" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="280.0" text="Title" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="330.0" text="Location" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="166.0" layoutY="380.0" text="Type" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="493.0" layoutY="480.0" text="Date" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="164.0" layoutY="430.0" text="Start LocalTime" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField disable="true" layoutX="300.0" layoutY="231.0" promptText="Auto Gen-Disabled" />
+        <TextField fx:id="title" layoutX="300.0" layoutY="281.0" />
+        <TextField fx:id="location" layoutX="300.0" layoutY="331.0" />
+        <TextField fx:id="type" layoutX="300.0" layoutY="381.0" />
+        <HBox layoutX="325.0" layoutY="537.0" prefHeight="45.0" prefWidth="200.0">
+            <children>
+                <ImageView fx:id="saveB" fitHeight="30.0" fitWidth="60.0" onMousePressed="#savePressed" onMouseReleased="#saveReleased" pickOnBounds="true" preserveRatio="true">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                    <image>
+                        <Image url="@../img/save.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="cancelB" fitHeight="30.0" fitWidth="60.0" layoutX="15.0" layoutY="15.0" onMousePressed="#cancelPressed" onMouseReleased="#cancelReleased" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/cancel.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </ImageView>
+            </children>
+        </HBox>
+        <HBox layoutX="380.0" layoutY="5.0" prefHeight="100.0" prefWidth="396.0" spacing="30.0">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </HBox>
+      <ComboBox fx:id="endComboBox" layoutX="300.0" layoutY="481.0" prefWidth="150.0" />
+      <Label layoutX="163.0" layoutY="480.0" text="End LocalTime" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="startComboBox" layoutX="300.0" layoutY="431.0" onAction="#onStart" prefWidth="150.0" />
+      <Label layoutX="493.0" layoutY="430.0" text="Contact" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="contactComboBox" layoutX="617.0" layoutY="431.0" prefWidth="150.0" />
+      <DatePicker fx:id="date" layoutX="617.0" layoutY="481.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="493.0" layoutY="380.0" text="Customer ID" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="desc" layoutX="617.0" layoutY="230.0" prefHeight="124.0" prefWidth="150.0" />
+      <Label layoutX="493.0" layoutY="230.0" text="Description" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="customerComboBox" layoutX="617.0" layoutY="381.0" prefWidth="150.0" />
+    </children>
+</Pane>

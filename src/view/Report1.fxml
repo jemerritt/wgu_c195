@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #252525; -fx-background-insets: 12; -fx-background-radius: 6; -fx-effect: dropshadow(three-pass-box, derive(black, -20%), 10, 0, 4, 4);" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Report1">
+    <children>
+        <Label layoutX="25.0" layoutY="40.0" text="Scheduling System" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="24.0" />
+            </font></Label>
+        <Pane layoutX="50.0" layoutY="111.0" prefHeight="730.0" prefWidth="1150.0" style="-fx-border-color: grey; -fx-border-radius: 10;">
+            <children>
+                <Label layoutX="15.0" layoutY="20.0" text="Reports" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            <HBox layoutX="174.0" prefHeight="27.0" prefWidth="569.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <TextArea fx:id="typeArea" editable="false" layoutX="136.0" layoutY="156.0" prefHeight="469.0" prefWidth="323.0" />
+            <TextArea fx:id="monthArea" editable="false" layoutX="694.0" layoutY="156.0" prefHeight="469.0" prefWidth="323.0" />
+            <Label layoutX="136.0" layoutY="125.0" text="Total Number of Appointments by Type" textFill="WHITE" />
+            <Label layoutX="694.0" layoutY="125.0" text="Total Number of Appointments by Month" textFill="WHITE" />
+            </children></Pane>
+        <ImageView fx:id="exitButton" fitHeight="18.0" fitWidth="18.0" layoutX="1150.0" layoutY="15.0" onMousePressed="#exitPressed" onMouseReleased="#exitReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/exit.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="minButton" fitHeight="18.0" fitWidth="18.0" layoutX="1130.0" layoutY="15.0" onMousePressed="#minPressed" onMouseReleased="#minReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/min.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="appointmentSearchError" layoutX="195.0" layoutY="175.0" prefHeight="30.0" prefWidth="263.0" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+      <HBox layoutX="380.0" layoutY="5.0" prefHeight="100.0" prefWidth="396.0" spacing="30.0">
+         <children>
+            <Label fx:id="aLabel" onMouseEntered="#aLabelHover" onMouseExited="#aLabelHoverExit" onMousePressed="#aLabelClick" onMouseReleased="#aLabelClickRelease" text="Appointments" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="cLabel" onMouseEntered="#cLabelHover" onMouseExited="#cLabelHoverExit" onMousePressed="#cLabelClick" onMouseReleased="#cLabelClickRelease" text="Customers" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </HBox>
+    </children>
+</Pane>

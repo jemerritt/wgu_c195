@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #252525; -fx-background-insets: 12; -fx-background-radius: 6; -fx-effect: dropshadow(three-pass-box, derive(black, -20%), 10, 0, 4, 4);" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Customers">
+    <children>
+        <Label layoutX="25.0" layoutY="40.0" text="Scheduling System" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="24.0" />
+            </font></Label>
+        <Pane layoutX="25.0" layoutY="100.0" prefHeight="730.0" prefWidth="1150.0" style="-fx-border-color: grey; -fx-border-radius: 10;">
+            <children>
+                <TableView fx:id="customersTable" layoutX="5.0" layoutY="45.0" prefHeight="670.0" prefWidth="1140.0" style="-fx-background-color: #202020;">
+                    <columns>
+                        <TableColumn fx:id="customerIdColumn" prefWidth="50.0" text="ID" />
+                        <TableColumn fx:id="customerNameColumn" prefWidth="200.0" text="Name" />
+                        <TableColumn fx:id="customerPhoneColumn" prefWidth="120.0" text="Phone" />
+                        <TableColumn fx:id="customerAddressColumn" prefWidth="320.0" text="Address" />
+                        <TableColumn fx:id="customerPostalColumn" prefWidth="100.0" text="Postal Code" />
+                        <TableColumn fx:id="customerDivColumn" text="Division ID" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT" layoutX="920.0" layoutY="740.0" prefHeight="45.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fx:id="customerAddB" fitHeight="30.0" fitWidth="60.0" onMousePressed="#customerAddPressed" onMouseReleased="#customerAddReleased" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/add.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="customerModB" fitHeight="30.0" fitWidth="200.0" onMousePressed="#customerModPressed" onMouseReleased="#customerModReleased" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/modify.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="customerDelB" fitHeight="30.0" fitWidth="200.0" onMousePressed="#customerDelPressed" onMouseReleased="#customerDelReleased" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/delete.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <Label layoutX="15.0" layoutY="20.0" text="Customers" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="customerSearch" layoutX="650.0" layoutY="16.0" onAction="#customerSearchAction" prefHeight="25.0" prefWidth="239.0" promptText="Search by customer ID or Name..." />
+            </children></Pane>
+        <ImageView fx:id="exitButton" fitHeight="18.0" fitWidth="18.0" layoutX="1150.0" layoutY="15.0" onMousePressed="#exitPressed" onMouseReleased="#exitReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/exit.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="minButton" fitHeight="18.0" fitWidth="18.0" layoutX="1130.0" layoutY="15.0" onMousePressed="#minPressed" onMouseReleased="#minReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/min.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="customerSearchError" layoutX="195.0" layoutY="175.0" prefHeight="30.0" prefWidth="263.0" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+        <Label fx:id="productSearchError" layoutX="670.0" layoutY="175.0" prefHeight="30.0" prefWidth="249.0" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+      <HBox layoutX="380.0" layoutY="5.0" prefHeight="100.0" prefWidth="396.0" spacing="30.0">
+         <children>
+            <Label fx:id="aLabel" onMouseEntered="#aLabelHover" onMouseExited="#aLabelHoverExit" onMousePressed="#aLabelClick" onMouseReleased="#aLabelClickRelease" text="Appointments" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="cLabel" onMouseEntered="#cLabelHover" onMouseExited="#cLabelHoverExit" onMousePressed="#cLabelClick" onMouseReleased="#cLabelClickRelease" text="Customers" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </HBox>
+    </children>
+</Pane>

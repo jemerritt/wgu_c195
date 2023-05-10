@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #252525; -fx-background-insets: 12; -fx-background-radius: 6; -fx-effect: dropshadow(three-pass-box, derive(black, -20%), 10, 0, 4, 4);" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
+    <children>
+        <Label fx:id="titleLabel" layoutX="25.0" layoutY="40.0" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="24.0" />
+            </font></Label>
+        <ImageView fx:id="exitButton" fitHeight="18.0" fitWidth="18.0" layoutX="1150.0" layoutY="15.0" onMousePressed="#exitPressed" onMouseReleased="#exitReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/exit.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="minButton" fitHeight="18.0" fitWidth="18.0" layoutX="1130.0" layoutY="15.0" onMousePressed="#minPressed" onMouseReleased="#minReleased" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/min.png" />
+            </image>
+        </ImageView>
+        <HBox layoutX="380.0" layoutY="5.0" prefHeight="100.0" prefWidth="396.0" spacing="30.0">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </HBox>
+      <Label fx:id="loginLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="567.0" layoutY="267.0" text="Login" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userNameField" layoutX="599.0" layoutY="385.0" />
+      <PasswordField fx:id="passwordField" layoutX="599.0" layoutY="450.0" />
+      <Label fx:id="userNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="389.0" text="Username:" textFill="WHITE" />
+      <Label fx:id="passwordLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="441.0" layoutY="454.0" text="Password:" textFill="WHITE" />
+      <Label fx:id="locationLabel" layoutX="568.0" layoutY="680.0" text="Zone ID" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="577.0" layoutY="626.0" mnemonicParsing="false" onMouseReleased="#onLoginButton" text="Login" />
+    </children>
+</Pane>
